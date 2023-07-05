@@ -1,1 +1,0 @@
-import{_ as e,o,c as n,b as l}from"./index-4241b0b6.js";const t={},s={class:"footer"},c=l("div",{class:"container flex"},[l("nav",null,[l("ul",null,[l("li",null,"이용약관"),l("li",null,"유료서비스 이용약관"),l("li",null,"개인정보처리방침"),l("li",null,"이메일무단수집거부"),l("li",null,"보안")])])],-1),r=[c];function a(_,i){return o(),n("footer",s,r)}const d=e(t,[["render",a]]);export{d as default};

@@ -1,0 +1,386 @@
+// @import "../sass/variables.scss";
+// 앱 전체 공통 css
+// @import '../main.css';
+@import './variables.scss';
+// @import '@vuepic/vue-datepicker/src/VueDatePicker/style/main.scss';
+
+$dp__font_size: 1.3rem !default;
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../assets/fonts/Pretendard-Thin.woff') format('woff');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../assets/fonts/Pretendard-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../assets/fonts/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../assets/fonts/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../assets/fonts/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../assets/fonts/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../assets/fonts/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../assets/fonts//Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../assets/fonts//Pretendard-Black.woff') format('woff');
+  font-weight: 900;
+  font-display: swap;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.4rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid $dave-gray-400;
+  border-radius: 5px;
+  padding: 14px 12px;
+  font-size: 1.4rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid $dave-primary !important;
+  outline: none;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 36px;
+
+  &.large {
+    height: 48px;
+  }
+
+  &.small {
+    height: 36px;
+    padding: 5px 25px 5px 12px;
+  }
+}
+
+input.search {
+  padding: 14px 48px 14px 12px;
+  background: url('/assets/images/search-icon.svg') no-repeat right 15px center;
+}
+
+input:read-only {
+  background: $dave-gray-100;
+  border: 1px solid $dave-gray-300;
+  cursor: not-allowed;
+}
+
+input.error {
+  border: 1px solid $dave-warning !important;
+}
+
+select {
+  appearance: none;
+  padding: 14px 25px 14px 12px;
+  background: white url('@/assets/images/chevron-right.svg') no-repeat right 8px center;
+  outline: none;
+
+  option {
+    &:disabled {
+      color: $dave-gray-500;
+    }
+  }
+}
+
+textarea {
+  width: 100%;
+  height: 168px;
+  resize: none;
+  overflow: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+
+  border: 1px solid $dave-gray-300;
+
+  thead {
+    background-color: white;
+    color: $dave-gray-800;
+    text-align: center;
+    height: 64px;
+  }
+
+  td,
+  th {
+    padding: 6px;
+    text-align: center;
+    background-color: white;
+  }
+
+  th {
+    font-weight: 700;
+  }
+
+  td {
+    min-width: 50px;
+  }
+
+  input {
+    min-height: 36px;
+    padding: 8px 12px;
+  }
+
+  select {
+    min-height: 36px;
+    padding: 8px 25px 8px 10px;
+  }
+}
+
+// 판매자 홈 전용 css
+.sales-layout {
+
+  input,
+  select,
+  textarea {
+    border: 1px solid $dave-gray-300;
+  }
+}
+
+// 검색 input
+.search-input-wrap {
+  position: relative;
+  height: 36px;
+
+  .search {
+    width: 100%;
+    height: 100%;
+    background: none;
+  }
+
+  .search-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 36px;
+    height: 100%;
+    background-image: utilIcon(icon-search, '8B95A1');
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+  }
+}
+
+// Vue Select custom
+.style-chooser {
+  background-color: #fff;
+  border: 1px solid $dave-gray-400;
+  border-radius: 4px;
+
+  &.vs--open {
+    border: 1px solid $dave-primary !important;
+    border-radius: 4px;
+
+    .vs__actions {
+      transform: rotate(180deg);
+
+    }
+  }
+
+  .vs__actions {
+    width: 12px;
+    height: 7px;
+    background: white url('@/assets/images/chevron-right.svg') no-repeat right center;
+    transition: rotate 1s;
+
+    svg {
+      display: none;
+    }
+  }
+
+  // select input
+  .vs__dropdown-toggle {
+    width: 100%;
+    min-height: 5.6rem;
+    height: auto;
+    padding: 0 1.8rem;
+    align-items: center;
+    border: 0;
+
+    .vs__search {
+      padding: 0;
+      border: 0;
+      color: $dave-gray-600;
+      font-size: $dave-typo-9;
+
+
+      &:focus {
+        border: 0 !important;
+      }
+
+      &::placeholder {
+        font-size: $dave-typo-9;
+        color: $dave-gray-500;
+      }
+    }
+
+    .vs__selected-options {
+      padding: 0.6rem 0;
+
+      .vs__selected {
+        height: 3.6rem;
+        padding: 0 1.6rem;
+        margin: .4rem;
+        background: $dave-gray-200;
+        color: $dave-gray-600;
+        font-weight: 400;
+        font-size: $dave-typo-9;
+        border: 0;
+
+        &:hover {
+          background: $dave-gray-300;
+        }
+
+        .vs__deselect {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+  }
+
+  // select option
+  .vs__dropdown-menu {
+    background: #fff;
+    border: 1px solid $dave-primary;
+
+    &::-webkit-scrollbar {
+      width: 7px;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $dave-gray-600;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $dave-gray-300;
+    }
+
+  }
+
+  .vs__dropdown-option {
+    padding: 14px;
+    color: $dave-gray-800;
+
+    .select-icon {
+      display: inline-block;
+      width: 20px;
+      height: 100%;
+      margin-left: 10px;
+      text-indent: -9999px;
+    }
+  }
+
+  .vs__dropdown-option--selected,
+  .vs__dropdown-option--highlight {
+    background-color: $dave-purple-100;
+  }
+
+  .vs__dropdown-option--selected {
+    .select-icon {
+      background: utilIcon(icon-check, '554BEC') no-repeat center;
+    }
+
+  }
+}
+
+// datepicker custom 
+.custom-input {
+  padding: 14px 12px 14px 45px;
+  font-size: 1.4rem;
+
+  &.dp__input_focus {
+    border: 1px solid $dave-primary;
+  }
+}
+
+.dp__input_icon {
+  left: 15px;
+}
+
+.dp__instance_calendar {
+  font-size: 1.4rem;
+}
+
+// 에디터
+.ql-snow {
+  background: white;
+}
