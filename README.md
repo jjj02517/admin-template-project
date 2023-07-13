@@ -3,7 +3,6 @@
 
 Vue와 VITE를 활용하여 만든 어드민 템플릿
 
-
 데모 사이트는 📌[여기](https://joo02-admin-template-project.netlify.app/Dashboard)에서 확인 가능합니다.
 
 ## 개발 공수
