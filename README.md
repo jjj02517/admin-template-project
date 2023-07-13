@@ -1,5 +1,5 @@
 
-# TODO APP
+# ADMIN Template
 
 Vue와 VITE를 활용하여 만든 어드민 템플릿
 
